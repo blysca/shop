@@ -7,7 +7,6 @@ const modules = [MatButtonModule, MatCardModule, MatTableModule];
 
 @NgModule({
   imports: [
-    modules
   ],
   exports: [
     modules
