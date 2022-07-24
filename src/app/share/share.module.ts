@@ -1,3 +1,4 @@
+import { HighlightDirective } from './highlight.directive';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,12 +6,13 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HighlightDirective],
   imports: [
     CommonModule
   ],
   exports: [
-    MaterialModule
+    MaterialModule,
+    HighlightDirective
   ]
 })
 export class ShareModule { }
