@@ -1,0 +1,14 @@
+:host {
+
+  mat-card {
+    margin: 2rem 0;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .2)
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

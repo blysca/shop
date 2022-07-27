@@ -1,8 +1,12 @@
 :host {
   mat-card {
     min-width: 280px;
-    min-height: 10rem;;
+    min-height: 10rem;
     width: 20rem;
     margin: 0 2rem 2rem 0;
+
+    &.active {
+      background-color: darkmagenta;
+    }
   }
 }
