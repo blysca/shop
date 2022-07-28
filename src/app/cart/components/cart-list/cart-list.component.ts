@@ -21,7 +21,7 @@ export class CartListComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(products => {
-      this.products = [...products]
+      this.products = [...products];
       this.total = this.cartService.totalCost;
       this.quantity = this.cartService.totalQuantity;
     });
@@ -41,7 +41,7 @@ export class CartListComponent implements OnInit {
 
       case CartActions.delete:
       this.cartService.deleteProduct(p)
-      break;      
+      break;
     }
   }
 
