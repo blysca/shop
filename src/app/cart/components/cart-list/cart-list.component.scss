@@ -8,6 +8,11 @@
     border: 1px solid rgba(255, 255, 255, .2)
   }
 
+  mat-card-actions {
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
   .wrapper {
     display: flex;
     justify-content: flex-start;

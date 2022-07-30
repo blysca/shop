@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/products/product';
 import { CartActions } from '../../cart-actions';
-import { CartService } from '../../cart.service';
+import { CartService } from '../../services';
 
 @Component({
   selector: 'app-cart-list',
@@ -28,21 +28,24 @@ export class CartListComponent implements OnInit {
   }
 
   onAction(action: CartActions, p: ProductModel): void {
-    console.log({action});
-    
+    console.log({ action });
+
     switch (action) {
       case CartActions.increase:
-      this.cartService.addProduct(p)
-      break;
+        this.cartService.addProduct(p)
+        break;
 
       case CartActions.decrease:
-      this.cartService.decreaseProduct(p)
-      break;
+        this.cartService.decreaseProduct(p)
+        break;
 
       case CartActions.delete:
-      this.cartService.deleteProduct(p)
-      break;      
+        this.cartService.removeProduct(p)
+        break;
     }
   }
 
+  removeAll() {
+    this.cartService.removeAllProducts()
+  }
 }

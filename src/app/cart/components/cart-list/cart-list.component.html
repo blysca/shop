@@ -45,6 +45,9 @@
         </table>
     </mat-card-content>
     <mat-card-actions align="end">
+        <button (click)="removeAll()" mat-raised-button color="warn" aria-label="Delete an item">
+            Remove All
+        </button>
         <h3>Total ({{quantity}} items): {{total | currency}}</h3>
     </mat-card-actions>
 </mat-card>
