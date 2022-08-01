@@ -1,5 +1,5 @@
 export enum CartActions {
-    delete = 'DELETE',
+    remove = 'REMOVE',
     increase = 'INCREASE',
     decrease = 'DECREASE',
     removeAll = 'REMOVE_ALL'

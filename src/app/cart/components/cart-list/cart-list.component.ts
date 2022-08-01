@@ -39,8 +39,8 @@ export class CartListComponent implements OnInit {
         this.cartService.decreaseProduct(p)
         break;
 
-      case CartActions.delete:
-      this.cartService.deleteProduct(p)
+      case CartActions.remove:
+      this.cartService.removeProduct(p)
       break;
     }
   }

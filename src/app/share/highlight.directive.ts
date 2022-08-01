@@ -30,7 +30,7 @@ export class HighlightDirective {
 
   @HostListener('mouseleave', ['$event'])
   leave(event: Event): void {
-    console.log('mouseleave event on host element');
+    // console.log('mouseleave event on host element');
     this.attrClass = '';
     this.highlightBg('')
   }

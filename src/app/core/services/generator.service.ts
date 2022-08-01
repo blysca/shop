@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { GenID } from './gen-id.generator';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneratorService {
+
+  constructor(private generatorID: GenID) {
+  }
 
   generate(n: number): string {
     let result = '';
@@ -15,4 +19,9 @@ export class GeneratorService {
     }
     return result;
   }
+
+  getNewID(): number {
+    return this.generatorID.genID();
+  }
 }
+

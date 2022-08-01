@@ -13,7 +13,7 @@ export class CartItemComponent {
   @Output() action = new EventEmitter<CartActions>();
 
   delete(): void {
-    this.action.emit(CartActions.delete)
+    this.action.emit(CartActions.remove)
   }
   increase(): void {
     this.action.emit(CartActions.increase)

@@ -1,7 +1,17 @@
-export class GenID {
-    static COUNTER: number = 0;
+import { Injectable } from '@angular/core';
 
-    genID() {
+@Injectable({
+    providedIn: 'root'
+})
+
+export class GenID {
+    private static COUNTER: number = 0;
+
+    genID(): number {
         return GenID.COUNTER++;
     }
+
+    /* genID(): number {
+        return +`${Date.now()}${(''+Math.random()).slice(2)}}`;
+    } */
 }
