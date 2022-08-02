@@ -1,4 +1,4 @@
-import { ConfigModel } from './config-model';
+import { type ConfigModel } from './config-model';
 import { Injectable } from '@angular/core';
 import { generate } from 'rxjs';
 
@@ -7,7 +7,11 @@ import { generate } from 'rxjs';
 })
 export class ConfigOptionsService {
 
-  private baseConfig: ConfigModel = {} as ConfigModel;
+  private baseConfig: ConfigModel = {
+    email: 'my@mail.com',
+    id: '52b7d932-f302-4933-994c-5f2a8573f062',
+    login: 'Alabama Skyplex '
+  };
 
   constructor() { }
 
@@ -16,14 +20,22 @@ export class ConfigOptionsService {
   }
 
   set config(c: Partial<ConfigModel>) {
-    this.baseConfig = {
-      id: c.id || '1',
-      email: c.email || 'N/A',
-      login: c.login || `guest`
+    if (c.email) {
+      this.baseConfig.email = c.email;
+    }
+    if (c.id) {
+      this.baseConfig.id = c.id;
+    }
+    if (c.login) {
+      this.baseConfig.login = c.login;
     }
   }
 
   set configProperty(c: { key: string, value: any }) {
+    console.log({ c });
+
     this.baseConfig[c.key] = c.value;
+    console.log(this.baseConfig);
+
   }
 }

@@ -1,18 +1,20 @@
-import { HighlightDirective } from './highlight.directive';
+import { HighlightDirective, BorderDirective } from './directives';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
+const directives = [HighlightDirective, BorderDirective];
 
 @NgModule({
-  declarations: [HighlightDirective],
+  declarations: [
+    ...directives
+  ],
   imports: [
     CommonModule
   ],
   exports: [
     MaterialModule,
-    HighlightDirective
+    ...directives
   ]
 })
 export class ShareModule { }

@@ -1,12 +1,27 @@
 <h2 display-1>first</h2>
 
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>{{name}}</mat-card-title>
-        <mat-card-subtitle>{{price | currency}} {{category}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>{{description}}</mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button>Action</button>
-    </mat-card-actions>
-</mat-card>
+<section>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{name}}</mat-card-title>
+            <mat-card-subtitle>{{price | currency}} {{category}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>{{description}}</mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button>Action</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{baseConfig?.login || 'N/A'}} / {{baseConfig?.email || 'N/A'}}</mat-card-title>
+            <mat-card-subtitle>{{baseConfig?.id || 'N/A'}} / {{baseConfig?.['phone'] || 'N/A'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <pre appBorder color="lightpink" bWidth="2px" bStyle="dashed">{{constants | json}}</pre>
+        </mat-card-content>
+        <mat-card-content>
+            {{someString}}
+        </mat-card-content>
+    </mat-card>
+</section>

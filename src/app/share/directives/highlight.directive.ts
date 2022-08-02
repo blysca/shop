@@ -8,10 +8,7 @@ export class HighlightDirective {
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
-
-  ) {
-
-  }
+  ) { }
 
   @HostBinding('class')
   attrClass!: string;

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { GenID } from './gen-id.generator';
 
 @Injectable({
@@ -6,7 +6,7 @@ import { GenID } from './gen-id.generator';
 })
 export class GeneratorService {
 
-  constructor(private generatorID: GenID) {
+  constructor(@Optional() private generatorID: GenID) {
   }
 
   generate(n: number): string {
@@ -21,7 +21,8 @@ export class GeneratorService {
   }
 
   getNewID(): number {
-    return this.generatorID.genID();
+    const id = this.generatorID?.genID() ?? `${Date.now()}${(''+Math.random()).slice(2)}}`;
+    return id;
   }
 }
 

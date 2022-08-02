@@ -1,0 +1,12 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  mat-card {
+    margin: 0 1rem 1rem 0;
+    min-width: 20rem;
+    max-width: 32rem;
+    width: 100%;
+  }
+}

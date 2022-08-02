@@ -9,6 +9,12 @@ import { ShareModule } from './share/share.module';
 import { ProductsModule } from './products/products.module';
 import { CartModule } from './cart/cart.module';
 
+import { generatedString, GeneratorFactory, LocalStorageService, GeneratorService, ConstantService } from './core/services';
+
+
+const constantServiceExample = new ConstantService();
+const lclStorage = new LocalStorageService();
+// const generatedString = GeneratorFactory(23);
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,11 @@ import { CartModule } from './cart/cart.module';
     ProductsModule,
     CartModule
   ],
-  providers: [],
+  providers: [
+    { provide: ConstantService, useValue: constantServiceExample },
+    { provide: generatedString, useFactory: GeneratorFactory(23), deps: [GeneratorService] },
+    { provide: LocalStorageService, useValue: lclStorage }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
