@@ -2,13 +2,27 @@
     <mat-card-header>
         <mat-card-title>Cart List</mat-card-title>
         <mat-card-subtitle>Products: {{products.length}}</mat-card-subtitle>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Order By</mat-label>
+                <mat-select [(value)]="orderByValue">
+                    <mat-option value="name">Name</mat-option>
+                    <mat-option value="price">Price</mat-option>
+                    <mat-option value="quantity">Quantity</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            &nbsp;
+            &nbsp;
+
+            <mat-checkbox [(ngModel)]="checked">Ascending</mat-checkbox>
+        </div>
     </mat-card-header>
 
     <mat-card-content *ngIf="products.length > 0, else noItems" class="wrapper">
-        <app-cart-item *ngFor="let p of products" 
-        [product]="p"
-        (action)="onAction($event, p)"
-        ></app-cart-item>
+        <app-cart-item *ngFor="let p of (products | orderBy : orderByValue : checked)" [product]="p"
+            (action)="onAction($event, p)"></app-cart-item>
     </mat-card-content>
 
     <ng-template #noItems>

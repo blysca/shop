@@ -3,6 +3,6 @@
         <h2 display-1>product-list</h2>
     </mat-card-header>
     <mat-card-content class="wrapper">
-        <app-product *ngFor="let p of products" [product]="p" (addProduct)="onAddProduct($event)"></app-product>
+        <app-product *ngFor="let p of products | async" [product]="p" (addProduct)="onAddProduct($event)"></app-product>
     </mat-card-content>
 </mat-card>

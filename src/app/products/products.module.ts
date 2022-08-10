@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {ProductComponent, ProductListComponent} from './components'
+
+import { ShareModule } from './../share/share.module';
 import { ProductService } from './product.service';
-import { MaterialModule } from '../share/material.module';
+import { ProductComponent, ProductListComponent } from './components'
 
 const productModuleComponents = [ProductComponent, ProductListComponent]
 
@@ -14,8 +14,7 @@ const productModuleComponents = [ProductComponent, ProductListComponent]
     ProductService
   ],
   imports: [
-    CommonModule,
-    MaterialModule
+    ShareModule
   ],
   exports: [
     productModuleComponents
