@@ -14,6 +14,8 @@ export class CartListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'price', 'quantity', 'subtotal'];
   total: number = 0;
   quantity: number = 0;
+  orderByValue = '';
+  checked = true;
 
   constructor(
     private cartService: CartService
@@ -40,8 +42,8 @@ export class CartListComponent implements OnInit {
         break;
 
       case CartActions.remove:
-      this.cartService.removeProduct(p)
-      break;
+        this.cartService.removeProduct(p)
+        break;
     }
   }
 
