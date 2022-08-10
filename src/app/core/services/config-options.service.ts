@@ -20,15 +20,18 @@ export class ConfigOptionsService {
   }
 
   set config(c: Partial<ConfigModel>) {
-    if (c.email) {
-      this.baseConfig.email = c.email;
-    }
-    if (c.id) {
-      this.baseConfig.id = c.id;
-    }
-    if (c.login) {
-      this.baseConfig.login = c.login;
-    }
+    // а так можно?
+    this.baseConfig = {...this.baseConfig, ...c};
+
+    // if (c.email) {
+    //   this.baseConfig.email = c.email;
+    // }
+    // if (c.id) {
+    //   this.baseConfig.id = c.id;
+    // }
+    // if (c.login) {
+    //   this.baseConfig.login = c.login;
+    // }
   }
 
   set configProperty(c: { key: string, value: any }) {

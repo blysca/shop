@@ -22,6 +22,9 @@ export class CartService {
       quantity: 1
     },
   ]
+  // мне нравится, когда в названии переменной, которая содержит subject используется два знака $$ как суффикс
+  // а для переменной, которая содержит observable - один знак $.
+  // может и вам будет интересно использовать такой подход
   private productsSubject = new BehaviorSubject<ProductModel[]>(Object.assign([], this.cartProducts));
   products$ = this.productsSubject.asObservable();
   constructor() { }
