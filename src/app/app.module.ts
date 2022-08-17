@@ -36,3 +36,4 @@ const lclStorage = new LocalStorageService();
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// Все ок
